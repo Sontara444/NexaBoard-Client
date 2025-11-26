@@ -10,6 +10,7 @@ export default function CreateTask() {
         title: '',
         description: '',
         status: 'pending',
+        priority: 'medium',
         dueDate: '',
     });
     const [loading, setLoading] = useState(false);
@@ -67,7 +68,7 @@ export default function CreateTask() {
                     />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                     <div>
                         <label className="block text-gray-700 text-sm font-bold mb-2">
                             Status
@@ -80,6 +81,20 @@ export default function CreateTask() {
                             <option value="pending">Pending</option>
                             <option value="in-progress">In Progress</option>
                             <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label className="block text-gray-700 text-sm font-bold mb-2">
+                            Priority
+                        </label>
+                        <select
+                            className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500 bg-white"
+                            value={formData.priority}
+                            onChange={updateField('priority')}
+                        >
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
                         </select>
                     </div>
                     <div>

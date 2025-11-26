@@ -21,7 +21,7 @@ export default function DashboardLayout({ children }) {
             <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
             <div className="flex flex-1 overflow-hidden">
                 <Sidebar isOpen={sidebarOpen} closeSidebar={() => setSidebarOpen(false)} />
-                <main className="flex-1 overflow-y-auto p-4 md:p-8">
+                <main className="flex-1 overflow-y-auto p-4 md:p-8 md:ml-64">
                     {children}
                 </main>
             </div>
