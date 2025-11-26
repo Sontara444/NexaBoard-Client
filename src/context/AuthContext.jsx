@@ -77,6 +77,11 @@ export const AuthProvider = ({ children }) => {
 
     const login = ({ user, token }, remember = true) => setAuth(user, token, remember);
     const loginAlt = (userData, token, remember = true) => setAuth(userData, token, remember);
+    const updateUser = (payload) => {
+        const userData = payload?.user || payload;
+        const token = payload?.token || Cookies.get('token');
+        setAuth(userData, token, true);
+    };
 
     const logout = () => {
         Cookies.remove('token');
@@ -87,7 +92,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, loginAlt, logout, loading }}>
+        <AuthContext.Provider value={{ user, login, loginAlt, updateUser, logout, loading }}>
             {children}
         </AuthContext.Provider>
     );

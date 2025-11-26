@@ -46,7 +46,7 @@ export default function Login() {
         <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
             <div className="max-w-md w-full bg-white p-8 rounded-2xl shadow-lg space-y-8">
 
-                <h2 className="text-center text-3xl font-bold">Welcome Back</h2>
+                <h2 className="text-center text-gray-800 text-3xl font-bold">Welcome Back</h2>
 
                 {error && (
                     <div className="bg-red-50 border-l-4 border-red-500 p-4 text-red-700 text-sm rounded">
