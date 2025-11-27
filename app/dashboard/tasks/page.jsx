@@ -106,7 +106,6 @@ export default function Tasks() {
 
     return (
         <div className="w-full max-w-7xl mx-auto">
-            {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
                 <h1 className="text-2xl font-bold text-gray-900">Tasks</h1>
                 <Link
@@ -117,10 +116,8 @@ export default function Tasks() {
                 </Link>
             </div>
 
-            {/* Search and Filters */}
             <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-6">
                 <div className="flex flex-col md:flex-row gap-4 items-center">
-                    {/* Search */}
                     <div className="relative flex-1 w-full">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
                         <input
@@ -132,7 +129,6 @@ export default function Tasks() {
                         />
                     </div>
 
-                    {/* Status Filter */}
                     <div className="relative w-full md:w-48">
                         <select
                             className="w-full text-gray-700 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 appearance-none bg-white text-sm"
@@ -146,7 +142,6 @@ export default function Tasks() {
                         </select>
                     </div>
 
-                    {/* Priority Filter */}
                     <div className="relative w-full md:w-48">
                         <select
                             className="w-full text-gray-500 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 appearance-none bg-white text-sm"
@@ -160,7 +155,6 @@ export default function Tasks() {
                         </select>
                     </div>
 
-                    {/* Clear Button */}
                     {(searchTerm || filterStatus !== 'all' || filterPriority !== 'all') && (
                         <button
                             onClick={clearFilters}
@@ -172,7 +166,6 @@ export default function Tasks() {
                 </div>
             </div>
 
-            {/* Tasks List */}
             {loading ? (
                 <div className="text-center py-10 text-gray-500">Loading tasks...</div>
             ) : filteredTasks.length === 0 ? (
@@ -189,9 +182,7 @@ export default function Tasks() {
                             className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
                         >
                             <div className="flex items-start justify-between gap-4">
-                                {/* Left: Task Info */}
                                 <div className="flex-1 min-w-0">
-                                    {/* Title and Badges */}
                                     <div className="flex items-center gap-2 mb-2 flex-wrap">
                                         <h3 className="text-base font-semibold text-gray-900">
                                             {task.title}
@@ -206,14 +197,12 @@ export default function Tasks() {
                                         )}
                                     </div>
 
-                                    {/* Description */}
                                     {task.description && (
                                         <p className="text-sm text-gray-600 mb-2 line-clamp-1">
                                             {task.description}
                                         </p>
                                     )}
 
-                                    {/* Date and Category */}
                                     <div className="flex items-center gap-4 text-xs text-gray-500">
                                         {task.dueDate && (
                                             <div className="flex items-center gap-1">
@@ -232,7 +221,6 @@ export default function Tasks() {
                                     </div>
                                 </div>
 
-                                {/* Right: Action Buttons */}
                                 <div className="flex items-center gap-2">
                                     <button
                                         onClick={() => handleEdit(task._id)}

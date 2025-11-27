@@ -12,7 +12,6 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const router = useRouter();
 
-    // Set auth state and persist data
     const setAuth = (userObj, token, remember = true) => {
         const nameKey = userObj.username || userObj.name || userObj.firstName || userObj.email || 'User';
         const avatar = ('' + nameKey).charAt(0).toUpperCase();
@@ -25,7 +24,6 @@ export const AuthProvider = ({ children }) => {
         api.defaults.headers.common.Authorization = `Bearer ${token}`;
     };
 
-    // Initial auth load
     useEffect(() => {
         let mounted = true;
         const initAuth = async () => {

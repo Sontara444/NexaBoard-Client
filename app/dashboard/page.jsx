@@ -48,7 +48,6 @@ export default function Dashboard() {
 
     return (
         <div className="w-full max-w-7xl mx-auto">
-            {/* Welcome Section */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
@@ -56,7 +55,7 @@ export default function Dashboard() {
                             Welcome back, {user?.name || user?.username || 'user'}!
                         </h1>
                         <p className="text-gray-500 text-sm">
-                            Here's what's happening with your tasks today.
+                            Here&apos;s what&apos;s happening with your tasks today.
                         </p>
                     </div>
                     <Link
@@ -68,7 +67,6 @@ export default function Dashboard() {
                 </div>
             </div>
 
-            {/* Stats Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 <StatCard label="Total Tasks" value={stats.total} icon={<CheckSquare size={20} />} bg="bg-blue-50" iconColor="text-blue-600" />
                 <StatCard label="Completed" value={stats.completed} icon={<TrendingUp size={20} />} bg="bg-green-50" iconColor="text-green-600" />
@@ -76,7 +74,6 @@ export default function Dashboard() {
                 <StatCard label="Overdue" value={stats.overdue} icon={<AlertCircle size={20} />} bg="bg-red-50" iconColor="text-red-600" />
             </div>
 
-            {/* Recent Tasks Section */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
                 <div className="flex justify-between items-center mb-4">
                     <h2 className="text-lg font-semibold text-gray-900">Recent Tasks</h2>
@@ -94,11 +91,9 @@ export default function Dashboard() {
                                 key={task._id}
                                 className="p-4 border rounded-lg hover:bg-gray-50 transition-all flex justify-between items-center"
                             >
-                                {/* LEFT SIDE */}
                                 <div className="flex flex-col">
                                     <h3 className="text-sm font-semibold text-gray-900 mb-1">{task.title}</h3>
 
-                                    {/* STATUS & PRIORITY */}
                                     <div className="flex items-center gap-2">
                                         <span className={`px-2 py-1 rounded text-xs font-medium ${task.status === 'completed'
                                                 ? 'bg-green-100 text-green-700'
@@ -119,7 +114,6 @@ export default function Dashboard() {
                                     </div>
                                 </div>
 
-                                {/* RIGHT SIDE DATE */}
                                 {task.dueDate && (
                                     <div className="flex items-center gap-1 text-xs text-gray-600 ml-4">
                                         <CalendarDays size={18} />

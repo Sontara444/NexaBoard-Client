@@ -43,7 +43,6 @@ export default function Register() {
                 password: formData.password,
             });
 
-            // login user automatically after register
             login({ user: data.user, token: data.token });
 
             router.push('/dashboard');

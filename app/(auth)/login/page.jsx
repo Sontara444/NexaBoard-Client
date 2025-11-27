@@ -31,7 +31,6 @@ export default function Login() {
         try {
             const { data } = await api.post('/auth/login', formData);
 
-            // backend returns: { success, token, user }
             login({ user: data.user, token: data.token });
 
             router.push('/dashboard');

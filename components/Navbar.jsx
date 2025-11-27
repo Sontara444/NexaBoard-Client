@@ -44,11 +44,9 @@ const Navbar = ({ toggleSidebar }) => {
         </Link>
       </div>
 
-      {/* RIGHT: User or Auth Links */}
       <div className="flex items-center gap-4">
         {user ? (
           <div className="relative" ref={dropdownRef}>
-            {/* Avatar Button */}
             <button
               onClick={() => setDropdownOpen((prev) => !prev)}
               className="flex items-center gap-3 focus:outline-none hover:bg-gray-50 px-3 py-2 rounded-lg transition-colors"
@@ -62,7 +60,6 @@ const Navbar = ({ toggleSidebar }) => {
               </div>
             </button>
 
-            {/* Dropdown */}
             {dropdownOpen && (
               <div className="absolute right-0 mt-3 w-52 bg-white rounded-xl shadow-xl py-2 border border-gray-100 animate-fade-in z-50">
                 <div className="px-4 py-2 border-b border-gray-100">

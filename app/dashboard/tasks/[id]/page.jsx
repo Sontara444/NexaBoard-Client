@@ -5,7 +5,7 @@ import api from '@/lib/axios';
 import FormInput from '@/components/FormInput';
 
 export default function EditTask() {
-    const params = useParams();      // ✅ Get route params safely in client component
+    const params = useParams();      
     const id = params.id;
     const router = useRouter();
 
@@ -20,12 +20,11 @@ export default function EditTask() {
     const [saving, setSaving] = useState(false);
     const [error, setError] = useState('');
 
-    // Fetch task data on mount
     useEffect(() => {
         const fetchTask = async () => {
             try {
-                const { data } = await api.get('/tasks'); // Fetch all tasks
-                const task = data.find(t => t._id === id); // Find the task by id
+                const { data } = await api.get('/tasks'); 
+                const task = data.find(t => t._id === id); 
 
                 if (task) {
                     setFormData({
@@ -48,12 +47,10 @@ export default function EditTask() {
         fetchTask();
     }, [id]);
 
-    // Handle form field changes
     const updateField = (field) => (e) => {
         setFormData({ ...formData, [field]: e.target.value });
     };
 
-    // Submit updated task
     const handleSubmit = async (e) => {
         e.preventDefault();
         setSaving(true);

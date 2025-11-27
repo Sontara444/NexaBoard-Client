@@ -1,4 +1,3 @@
-// client/src/components/ProtectedRoute.jsx
 'use client';
 
 import { useEffect } from 'react';
@@ -15,7 +14,7 @@ export default function ProtectedRoute({ children }) {
         }
     }, [loading, user, router]);
 
-    if (loading) return null; // prevents flicker
+    if (loading) return null; 
 
     return user ? children : null;
 }

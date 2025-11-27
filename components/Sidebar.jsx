@@ -17,7 +17,6 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
 
   return (
     <>
-      {/* Mobile overlay */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-30 z-20 md:hidden"
@@ -60,7 +59,6 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
             onClick={closeSidebar}
           />
 
-          {/* Logout button */}
           <button
             onClick={handleLogout}
             className="w-full flex items-center gap-3 px-4 py-2 mb-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors text-sm font-medium mt-4"
