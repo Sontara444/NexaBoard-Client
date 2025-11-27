@@ -27,7 +27,7 @@ const Navbar = ({ toggleSidebar }) => {
   return (
     <nav className="bg-white shadow-sm border-b border-gray-200 h-16 flex items-center px-6 justify-between z-20 relative">
 
-      {/* LEFT: Logo + Menu Button */}
+      
       <div className="flex items-center gap-4">
         <button
           onClick={toggleSidebar}
